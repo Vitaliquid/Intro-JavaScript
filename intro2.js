@@ -34,3 +34,26 @@ function saludar(quien) {
 }
 saludar("Explorer");
 console.log("Bye");
+
+//Excepciones
+function preguntaDireccion(pregunta) {
+    let result = prompt(pregunta);
+    if (result.toLowerCase() == "izquierda") return "I";
+    if (result.toLowerCase() == "derecha") return "D";
+    throw new Error("Invalid directions; " + result);
+}
+
+function mirar() {
+    if (preguntaDireccion("A que lado?") == "I") {
+        return "una casa";
+     } else {
+        return "2 osos hambrientos";
+        }
+    }
+
+    try {
+        console.log("Mira a ", mirar())
+    } catch (error) {
+        console.log("Hubo un error: " + error);
+
+    }
